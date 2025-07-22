@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício js</title>
+</head>
+<body>
+    <h1>Interagindo com um botão</h1>
+    <p><button onclick="clicou()">Clique em mim!</button></p>
+    <p><a href="#" onclick="clicou1()">Link</a></p>
+    <p>Teste de <strong onclick="clicou2()">clicagem</strong></p>
+    <p onclick="clicou3()">FIM!</p>
+    <script>
+        function clicou() {
+            window.alert('Você clicou no botão!')
+        }
+        function clicou1() {
+            window.alert('Você clicou no link!')
+        }
+        function clicou2() {
+            window.alert('Você clicou em uma palavra!')
+        }
+        function clicou3() {
+            window.alert('Você clicou de mais já. chega! \u{270b}')
+        }
+    </script>
+    
+</body>
+</html>

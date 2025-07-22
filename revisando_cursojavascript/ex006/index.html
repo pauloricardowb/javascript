@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício js</title>
+</head>
+<body>
+    <h1>Somando dois números</h1>
+    <button onclick="somar()">Iniciar a soma</button>
+    <section id="res">
+        <p>O resultado...</p>
+    </section>
+
+    <button onclick="subtração()">Iniciar a subtração</button>
+    <section id="res1"></section>
+
+    <script>
+        function somar() {
+            let n1 = Number(window.prompt('Digite um número: '))
+            let n2 = Number(window.prompt('Digite mais um número: '))
+            soma = n1 + n2
+            let res = document.querySelector('section#res')
+            
+            res.innerHTML = `<p>A soma entre <mark>${n1}</mark> e <mark>${n2}</mark> é igual a <strong>${soma}</strong></p>`
+        }
+        function subtração() {
+            let n1 = Number(window.prompt('Digite um número'))
+            let n2 = Number(window.prompt('Agora outro.'))
+            sub = n1 - n2
+            let res1 = document.querySelector('section#res1')
+
+            res1.innerHTML = `A subtração entre <mark>${n1}</mark> e <mark>${n2}</mark> é igual a <strong>${sub}</strong>`
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício js</title>
+</head>
+<body>
+    <h1>Trabalhando com Dados</h1>
+    <button onclick="inicio()">Clique!</button>
+    <section id="resultado">
+        <p>Aqui vai aparecer o resultado...</p>
+    </section>
+    
+    <button onclick="inicio1()">Clique!</button>
+    <section id="resultado1">
+        <p>Resultado...</p>
+    </section>  
+    
+    <button onclick="inicio2()">Clique!</button>
+    <section id="resultado2">
+        <p>Resultado...</p>    
+    </section>
+        
+    <script>
+        function inicio() {
+            let nome = window.prompt('Qual é o seu nome?')
+            let res = window.document.getElementById('resultado')
+            res.innerHTML = `<p>Olá, <strong>${nome}</strong>! É um grande prazer te conhecer! &#x1f600</p>`/* no js o codigo para emoji é \u{} | no html é &#x */
+        }
+        function inicio1() {
+            let comida = window.prompt('Qual sua comida favorita')
+            let res = window.document.getElementById('resultado1')
+            res.innerHTML =`<p>Sim, <strong>${comida}</strong> é mesmo muito bom!</p>`
+        }
+        function inicio2() {
+            let bebida = window.prompt('Para beber?')
+            let res = window.document.getElementById('resultado2')
+            res.innerHTML = `<p><strong>${bebida}</strong> é um ótima bebida.</p>`
+        }
+    </script>
+</body>
+</html>

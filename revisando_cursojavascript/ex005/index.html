@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício js</title>
+</head>
+<body>
+    <h1>Trabalhando com números</h1>
+    <button onclick="calcular()">Clique para calcular</button>
+    <section id="res">
+        <p>O resultado vai aparecer!</p>
+    </section>
+    <section id="res1">
+        <p></p>
+    </section><br>
+    <button onclick="calcular1()" >Mais?</button>
+    <section id="atencao">
+        <p></p>
+    </section>
+    <script>
+        window.alert('Saudações visitante!')
+        function calcular() {
+            let n1 = Number(window.prompt('Digite um número meu caro: '))
+            let res = document.querySelector('section#res')
+            let res1 = document.querySelector('section#res1')
+
+            res.innerHTML = `<p>O dobro de ${n1} é ${n1*2} e a metade é ${n1/2}!</p>`
+            
+            res1.innerHTML = 'Sim, eu sei, isso foi incrivel...'
+        }
+        function calcular1() {
+            window.alert('Outro truque meu nobre?')
+            let at = document.getElementById('atencao')
+
+            at.innerHTML = 'Continue acompanhando o repositório!'
+        }
+    </script>
+    
+</body>
+</html>
