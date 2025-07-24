@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 70vw;
+        }
+        div#inf p{
+            background-color: aliceblue;
+        }
+        div#inf p:hover {
+            color: lightcoral;
+            cursor: pointer; /* cursor / mãozinha */
+        }
+        div#dica {
+            background-color: aliceblue;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body onload="carregar()">
+    <header>
+        <h1>Horas do dia</h1>
+    </header>
+    <section>
+        <div id="msg">
+            <p>Mensagem aqui...</p>
+        </div>
+        <div id="dica">
+            <p>Uma mensagem para você...</p> 
+        </div>
+        <div>
+            <img id="imagem" src="" alt="">
+        </div>
+        <div  onclick="Informacao()" id = "inf">
+            <p>O que é essa <strong>aplicação</strong>?</p>
+        </div>
+    </section>
+    <footer>
+        <p>Aplicação desenvolvida por <strong>Paulo Ricardo</strong></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

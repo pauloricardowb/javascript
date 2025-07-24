@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            background-color: rgb(201, 229, 253);
+            overflow: hidden;
+        }
+        header {
+            color: white;
+            text-align: center;
+            size: 2em;
+            padding-top: 30px;
+        }
+        section {
+            background-color: white;
+            width: 500px;
+            margin: auto;
+            margin-top: 100px;
+            padding: 30px;
+            border-radius: 30px;
+        }      
+        img#foto {
+            display: block;
+            width: 250px;
+            height: 250px;
+            margin: auto;
+            padding-top: 20px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        div#form {
+            line-height: 35px;
+            text-align: center;
+        }
+        div#res p {
+            text-align: center;
+            padding: 10px;
+        }
+        footer {
+            background-color: white;
+            text-align: center;
+            margin-top: 199px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header> 
+    <section>
+        <div id="form">
+            <p>Ano de nascimento:</p>
+            <input type="number" name="txtano" id="txtano" min="0">
+            <p>sexo:
+                <input type="radio" name="radsex" id="mas" checked>
+                <label for="mas">Masculino</label>
+                <input type="radio" name="radsex" id="fem">
+                <label for="fem">Feminino</label>
+            </p>
+            <p>
+                <input type="button" value="Verificar" onclick="verificar()">
+            </p>
+        </div>
+        <div id="res">
+            <p>Preencha os dados acima para ver o resultado!</p>
+        </div>
+    </section>
+    <footer>
+        <p>site criado por <strong>Paulo Ricardo</strong></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
