@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#centro {
+            display: inline-block;
+            text-align: center;
+            margin-left: 45%;
+        }
+        div#area {
+            display: inline-block;
+
+            font: bolder 20px Arial;
+            background-color: aquamarine;
+            color: white;
+            width: 300px;
+            height: 300px;
+            line-height: 200px;
+            text-align: center;
+            border-radius: 10px;
+            
+            position: absolute;
+            transform: translate(-130%, 0%);
+        }
+        div#area2 {
+            display: inline-block;
+
+            font: bolder 20px Arial;
+            background-color: antiquewhite;
+            color: white;
+            width: 300px;
+            line-height: 300px;
+            text-align: center;
+            border-radius: 10px;
+
+            position: absolute;
+            transform: translate(79%, 0%);
+        }
+        p {
+         text-align: center;   
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"></div> -->
+    <div id="res">
+        <p>atenção</p>
+    </div>
+    
+    <!-- <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"></div> -->
+    <div id="centro">
+        <div id="area">
+            Não clique em mim...
+        </div>
+        <div id="area2">
+            Nem em mim...
+        </div>
+    </div>
+
+    <script>
+        alert('Saudações, tenha paciências com as caixas, elas são um pouco nervosas!')
+
+        res = document.getElementById('res')
+        res.innerHTML = `<p>Não as leve tão a sério... elas só gostam de espaço \u{1f605}<p>`
+        
+        var a = window.document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        b = window.document.getElementById('area2')
+        b.addEventListener('click', clicar)
+        b.addEventListener('mouseenter', entrar)
+        b.addEventListener('mouseout', sair)
+        
+        function clicar() {
+            a.innerText = 'Não clique na gente!'
+            b.innerText = 'Não gostamos de clique!'
+            a.style.background = 'red'
+            b.style.background = 'red'
+            document.body.style.backgroundColor = 'black'
+            document.body.style.margin = 'auto'           
+        }
+        function entrar() {
+            a.innerText = 'Se afaste!'
+            b.innerText = 'Não chegue aqui!'
+            document.body.style.backgroundColor = 'white'
+        }
+        function sair() {
+            a.innerText= "Obrigado!"
+            b.innerText="Muito obrigado..."
+            a.style.background = 'aquamarine'
+            b.style.background = 'antiquewhite'
+        }
+    </script>
+</body>
+</html>
