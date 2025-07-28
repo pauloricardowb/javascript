@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duncan's Just-In-Time</title>
+    <script type="text/javascript">
+        function updateOrder() { //Esse código é chamado para atualizar o pedido, calculando dinamicamente o subtotal e o total.
+            const TAXRATE = 0.0925;
+            const DONUTPRICE = 0.50;
+            var numCakeDonuts = parseInt(document.getElementById("cakedonuts").value); // parInt Usado para converter as intrings para números inteiros
+            var numGlazedDonuts = parseInt(documents.getElementById("glazeddonuts").value);
+            
+            if (isNaN(numCakeDonuts))
+                numCakeDonuts = 0;
+            if (isNaN(numGlazedDonuts))
+                numGlazedDonuts = 0;
+            var subTotal = (numCakeDonuts + numGlazedDonuts) * DONUTPRICE;
+
+            var tax = subTotal * TAXRATE;
+            var total = subTotal + TAXRATE;
+            document.getElementById("subtotal").value = "$" + subTotal.toFixed(2); // A função toFixed() arredonda os valores em dólar para duas casas decimais
+            document.getElementById("tax").value = "$" + tax.toFixed(2);
+            document.getElementById("total").value = "$" + total.toFixed(2);
+        }
+        function placeOrder() { //Esse código envia o pedido para o servidor e confirma-o com o usuário
+            // Submit order to server...
+            /* form.submit(); */
+        }
+    </script>
+</head>
+<body>
+    <div id="frame">
+        <form action="donuts.php" name="orderform" method="post">
+            <div class="field">
+                <!-- O pedido é atualizado quando muda o número de Donuts -->
+                # of cake: <input type="text" name="cakedonuts" id="cakedonuts" onchange="updateOrder();">
+            </div>
+            <div class="field">
+                # of glazed donuts: <input type="text" id="glazeddonuts" name="glazeddonuts" value="" onchange="updateOrder();">
+            </div>
+            <div class="field">
+                <input type="button" value="Place Order" onclick="placeOrder(this.form);"> <!-- O pedido é enviado quando o botão Place Order (Faça seu pedido) é clicado. -->
+            </div>
+        </form>
+    </div>
+</body>
+</html>
