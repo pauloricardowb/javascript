@@ -9,7 +9,7 @@
             const TAXRATE = 0.0925;
             const DONUTPRICE = 0.50;
             var numCakeDonuts = parseInt(document.getElementById("cakedonuts").value); // parInt Usado para converter as intrings para números inteiros
-            var numGlazedDonuts = parseInt(documents.getElementById("glazeddonuts").value);
+            var numGlazedDonuts = parseInt(document.getElementById("glazeddonuts").value);
             
             if (isNaN(numCakeDonuts))
                 numCakeDonuts = 0;
@@ -18,26 +18,49 @@
             var subTotal = (numCakeDonuts + numGlazedDonuts) * DONUTPRICE;
 
             var tax = subTotal * TAXRATE;
-            var total = subTotal + TAXRATE;
+            var total = subTotal + tax;
             document.getElementById("subtotal").value = "$" + subTotal.toFixed(2); // A função toFixed() arredonda os valores em dólar para duas casas decimais
             document.getElementById("tax").value = "$" + tax.toFixed(2);
             document.getElementById("total").value = "$" + total.toFixed(2);
         }
+
         function placeOrder() { //Esse código envia o pedido para o servidor e confirma-o com o usuário
             // Submit order to server...
-            /* form.submit(); */
+            if (document.getElementById("name").value == "") {
+                alert("Você precisa fornecer um nome antes de enviar o pedido.");
+            } else if (document.getElementById("pickupminutes").value == "" || isNaN(parseInt(document.getElementById("pickupminutes").value))){
+                alert("Você deve fornecer o número de minutos até a coleta" + "antes de enviar o pedido.");
+            } else {
+                var form = document.forms["orderform"];
+                form.submit();
+            }
         }
     </script>
 </head>
 <body>
     <div id="frame">
-        <form action="donuts.php" name="orderform" method="post">
+        <form action="" name="orderform" method="post">
+            <div class="field">
+                Name: <input type="text" name="name" id="name">
+            </div>
             <div class="field">
                 <!-- O pedido é atualizado quando muda o número de Donuts -->
                 # of cake: <input type="text" name="cakedonuts" id="cakedonuts" onchange="updateOrder();">
             </div>
             <div class="field">
                 # of glazed donuts: <input type="text" id="glazeddonuts" name="glazeddonuts" value="" onchange="updateOrder();">
+            </div>
+            <div class="field">
+                Minutes 'till pickup: <input type="number" name="pickupminutes" id="pickupminutes">
+            </div>
+            <div class="field">
+                Subtotal: <input type="text" name="subtotal" id="subtotal">
+            </div>
+            <div class="field">
+                Tax: <input type="text" name="tax" id="tax">
+            </div>
+            <div class="field">
+                Total: <input type="text" name="total" id="total">
             </div>
             <div class="field">
                 <input type="button" value="Place Order" onclick="placeOrder(this.form);"> <!-- O pedido é enviado quando o botão Place Order (Faça seu pedido) é clicado. -->
